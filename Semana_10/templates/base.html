@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}LOGICON S.A.{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header style="background-color: #2c3e50; color: white; padding: 1rem;">
+        <nav>
+            <a href="/" style="color: white; margin-right: 15px;">Inicio</a>
+            <a href="/productos" style="color: white; margin-right: 15px;">Inventario</a>
+            <a href="/clientes" style="color: white;">Clientes</a>
+        </nav>
+    </header>
+
+    <main style="padding: 2rem;">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer style="text-align: center; margin-top: 2rem; color: #7f8c8d;">
+        <hr>
+        <p>&copy; 2026 LOGICON S.A. - Gestión de Abastos Continental</p>
+    </footer>
+</body>
+</html>

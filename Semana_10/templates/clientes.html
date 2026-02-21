@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Clientes - LOGICON{% endblock %}
+
+{% block content %}
+    <h1>👥 Directorio de Clientes Corporativos</h1>
+    <p>Gestión de los 10,000 clientes registrados en el sistema.</p>
+
+    <table border="1" style="width:100%; border-collapse: collapse; margin-top: 20px;">
+        <thead style="background-color: #34495e; color: white;">
+            <tr>
+                <th>ID Cliente</th>
+                <th>Empresa / Nombre</th>
+                <th>RUC / ID Fiscal</th>
+                <th>Contacto Principal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in clientes %}
+            <tr>
+                <td>{{ c[0] }}</td>
+                <td>{{ c[1] }}</td>
+                <td>{{ c[2] }}</td>
+                <td>{{ c[3] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4" style="text-align: center;">No hay clientes registrados en la base de datos.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
